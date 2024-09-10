@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Sorting" style="flex-direction: row; justify-content: flex-start; flex-shrink: 0; align-items: stretch; align-self: auto; transform-origin: center; font-size: 12px; -unity-font-style: normal; border-left-color: rgba(55, 55, 55, 0.89); border-right-color: rgba(55, 55, 55, 0.89); border-top-color: rgba(55, 55, 55, 0.89); border-bottom-color: rgba(55, 55, 55, 0.89); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; -unity-text-align: middle-left;">
+        <ui:Label text="Sort by:" style="font-size: 11px; -unity-text-align: middle-left;" />
+        <ui:Toggle name="favoriteSortToggle" value="false" text="Favorite" tooltip="Sort by favorite (item with star icon)." style="flex-direction: row-reverse; color: rgb(221, 143, 0);" />
+        <ui:Toggle name="historySortToggle" value="false" tooltip="Sort by history." text="History (Not implemented yet)" style="flex-direction: row-reverse; white-space: nowrap; -unity-text-align: middle-left; text-overflow: clip; border-left-color: rgba(204, 20, 20, 0.93); border-right-color: rgba(204, 20, 20, 0.93); border-top-color: rgba(204, 20, 20, 0.93); border-bottom-color: rgba(204, 20, 20, 0.93); color: rgb(134, 214, 0);" />
+    </ui:VisualElement>
+    <ui:VisualElement name="Search" style="flex-direction: row; -unity-text-align: upper-right; white-space: nowrap; flex-wrap: nowrap; text-overflow: clip; display: flex; overflow: visible; align-items: stretch; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 0; border-left-width: 1px; border-left-color: rgb(38, 38, 38); border-right-color: rgb(38, 38, 38); border-top-color: rgb(38, 38, 38); border-bottom-color: rgb(38, 38, 38); flex-shrink: 0;">
+        <ui:Label text="Search:" enable-rich-text="false" style="-unity-text-align: middle-left; flex-direction: row-reverse; flex-wrap: nowrap; justify-content: flex-start; padding-right: 0; white-space: nowrap; font-size: 11px;" />
+        <ui:TextField name="searchInputField" style="flex-direction: row; visibility: visible; display: flex; overflow: visible; flex-basis: auto; flex-wrap: nowrap; align-items: auto; justify-content: flex-start; align-self: auto; -unity-text-align: middle-left; white-space: nowrap; text-overflow: clip; flex-shrink: 0; -unity-font-style: normal; width: auto; border-left-color: rgba(38, 38, 38, 0); border-right-color: rgba(38, 38, 38, 0); border-top-color: rgba(38, 38, 38, 0); border-bottom-color: rgba(38, 38, 38, 0); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; padding-right: 39px; margin-right: auto; min-width: 250px; max-width: none;" />
+    </ui:VisualElement>
+    <ui:MultiColumnListView name="FuzzySearchWindow" show-alternating-row-backgrounds="ContentOnly" horizontal-scrolling="true" show-border="true" style="padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 1px; align-items: stretch; flex-shrink: 1;">
+        <ui:Columns name="Columns">
+            <ui:Column name="0" title="Name" width="250" />
+            <ui:Column name="1" title="Type" width="350" />
+        </ui:Columns>
+    </ui:MultiColumnListView>
+    <ui:TextField name="prefixToRemove" label="Prefix to remove:" width="80" tooltip="text to remove at the begining, for each element in the FIRST column." style="-unity-font-style: normal;" />
+</ui:UXML>
