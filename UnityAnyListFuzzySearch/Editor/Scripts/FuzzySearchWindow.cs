@@ -310,7 +310,8 @@ namespace DDuong
 				else
 				{
 					// Already at the first item, no need to update further
-					evt.PreventDefault();
+					evt.StopPropagation();
+					//evt.PreventDefault();
 					return;
 				}
 			}
@@ -325,13 +326,17 @@ namespace DDuong
 				else
 				{
 					//- Already at the last item, no need to update further
-					evt.PreventDefault();
+					evt.StopPropagation();
+					//evt.PreventDefault();
+
 					return;
 				}
 			}
 
 			_listView.selectedIndex = newIndex;
-			evt.PreventDefault();
+			evt.StopPropagation();
+			//evt.PreventDefault();
+
 		}
 
 
